@@ -1,0 +1,23 @@
+mutation LogIn($username: String!, $password: String!) {
+  login(username: $username, password: $password) {
+    token
+  }
+}
+
+
+mutation createTask($dateTime: String!, $content: String!, $title: String!, $category: Category!) {
+  createTask(dateTime: $dateTime, content: $content, title: $title, category: $category) {
+    id
+  }
+}
+
+query getTasks {
+  tasks{
+    id
+    dateTime
+    title
+    content
+    status
+    category
+  }
+}

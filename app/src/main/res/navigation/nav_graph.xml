@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/loading">
+
+    <fragment
+        android:id="@+id/loading"
+        android:name="com.example.faunaapp.MVVM.View.Fragments.LoadingFragmentView"
+        android:label="log_in_fragment">
+        <action
+            android:id="@+id/action_loading_to_log_in"
+            app:destination="@id/log_in"
+            app:launchSingleTop="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/log_in"
+        android:name="com.example.faunaapp.MVVM.View.Fragments.LogInFragmentView"
+        android:label="log_in_fragment">
+        <action
+            android:id="@+id/action_log_in_to_allCalendarEntriesFragment"
+            app:destination="@id/allCalendarEntriesFragment"
+            app:launchSingleTop="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/allCalendarEntriesFragment"
+        android:name="com.example.faunaapp.MVVM.View.Fragments.AllCalendarEntriesFragmentView"
+        android:label="AllCalendarEntriesFragment" >
+        <action
+            android:id="@+id/action_allCalendarEntriesFragment_to_addEntryFragmentView"
+            app:destination="@id/addTaskEntryFragmentView" />
+        <action
+            android:id="@+id/action_allCalendarEntriesFragment_to_log_in"
+            app:destination="@id/log_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTaskEntryFragmentView"
+        android:name="com.example.faunaapp.MVVM.View.Fragments.AddTaskEntryFragmentView"
+        android:label="AddEntryFragmentView" >
+        <action
+            android:id="@+id/action_addEntryFragmentView_to_allCalendarEntriesFragment"
+            app:destination="@id/allCalendarEntriesFragment" />
+        <action
+            android:id="@+id/action_addTaskEntryFragmentView_to_log_in"
+            app:destination="@id/log_in" />
+    </fragment>
+</navigation>
